@@ -13,6 +13,7 @@ class Solution
     bool ispar(string x)
     {
         // Your code here
+    
         stack<char>s;
         for(int i=0;i<x.size();i++)
         {
@@ -53,7 +54,6 @@ class Solution
         return true;
         else
         return false;
-        
     }
 
 };
