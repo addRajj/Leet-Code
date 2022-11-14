@@ -7,23 +7,22 @@ class Solution{
     public:
     long long int minValue(int a[], int b[], int n)
     {
-      
-      vector<int>v1, v2;
-      
-      for(int i=0;i<n;i++)
-      {
-            v1.push_back(a[i]);
-            v2.push_back(b[i]);
-      }
-      sort(v1.begin() , v1.end());
-      sort(v2.begin() , v2.end() , greater<int>());
-      long long sum=0;
-      for(int i=0;i<n;i++)
-      {
-          sum+=(v1[i]*v2[i]);
-          
-      }
-      return sum;
+        // Your code goes here
+        priority_queue<int , vector<int> ,greater<int>>pq1;
+        priority_queue<int>pq2;
+        for(int i=0;i<n;i++)
+        {
+            pq1.push(a[i]);
+            pq2.push(b[i]);
+        }
+        long long sum=0;
+        while(pq1.size()!=0 && pq2.size()!=0)
+        {
+            sum+=(pq1.top() * pq2.top());
+            pq1.pop();
+            pq2.pop();
+        }
+        return sum;
         
     }
 };
