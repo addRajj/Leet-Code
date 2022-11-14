@@ -6,67 +6,28 @@ using namespace std;
 
 // } Driver Code Ends
 //User function template for C++
-/*
+
 class Solution{   
 public:
     int numberOfSubsequences(string S, string W){
         // code here 
-        for(int i=0;i<S.size();)
-        {
-            if(find(W.begin() , W.end(), S[i])==W.end())
-            {
-                S.erase(S.begin()+i);
-            }
-            else
-            i++;
-        }
-        string ans="";
         int count=0;
         for(int i=0;i<S.size();i++)
         {
-            ans+=S[i];
-            if(ans.size()==W.size())
+            int k=0;
+            for(int j=i;j<S.size();j++)
             {
-                if(ans==W)
-                count++;
+                if(S[j]==W[k])
+                {
+                    k++;
+                    S[j]='@';
+                }
                 
-                ans="";
             }
-            
+            if(k==W.size())
+            count++;
         }
-        if(ans==W)
-        count++;
-        
         return count;
-    }
-};
-*/
-
-
-class Solution{   
-public:
-    int numberOfSubsequences(string s, string w){
-        // code here 
-        int n=s.size();
-        int m=w.size();
-        int ans=0;
-        for(int i=0;i<n;i++){
-            int j=i;
-            if(s[i]==w[0]){
-                int k=0;
-                while(j<n){
-                    if(s[j]==w[k]){
-                        s[j]='!';
-                       k++;
-                    }
-                    j++;
-                }
-                if(k==w.size()){
-                    ans++;
-                }
-            }
-        }
-        return ans;
     }
 };
 
