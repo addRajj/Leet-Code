@@ -17,6 +17,16 @@ public:
         stack<int>st;
         int j=n-1;
         int i;
+        // to tha pr hum basically ek stack le rhe hai.. aur usme elements vector ke end se add krte
+        // ja rhe hai, hrr ek push me sbse phle kuch conditions check krni padegi , 
+        // jaise 1. ki agr stack empty hai to push
+        // 2. ki agr jo elements hum dall rhehai wo stack ke top se less hai to mtlb uss moment pr humme 
+        // stock to buy nhi krna chahiye, kyuki wo abhi tk ka sbse chota element hai, pr usse piche ka 
+        // humee idea nhi hai
+        // aur 3. ki agr elemenet bada aaya to humme ussse phle wale din hi stock ko purcahse kr lena chahiye
+        // tha
+        
+        // bs itni conditions he dekhtni hai :)
         for(i=n-1;i>=0;)
         {
             if(st.size()==0)
