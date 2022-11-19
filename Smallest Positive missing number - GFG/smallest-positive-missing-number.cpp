@@ -12,7 +12,7 @@ class Solution
     int missingNumber(int arr[], int n) 
     { 
         // Your code here
-          unordered_map<int , int>mp;
+        unordered_map<int , int>mp;
         for(int i=0;i<n;i++)
         {
             if(arr[i]>0)
@@ -29,8 +29,13 @@ class Solution
             
             sum+=itr.first;
         }
+        // to check weather there is any positive element or not.
         if(v.size()==0)
         return 1;
+        
+        // concept of sum is basically used to tell that which elements are presentand which are not
+        // if differnce is 0 , it means that all positive elements are present till N, so we need new positive 
+        // value as N+1.
         
         int sum1=(maxx+1)*(maxx)/2;
         int g=sum1-sum;
@@ -45,6 +50,7 @@ class Solution
             }
             return i;
         }
+        
     } 
 };
 
